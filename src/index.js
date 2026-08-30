@@ -29,7 +29,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       content: [
         {
           type: "text",
-          text: `ProvChart error: \( {err.message} \){err.code ? ` (${err.code})` : ""}`,
+          text: `ProvChart error: ${err.message} ${err.code ? ` (${err.code})` : ""}`,
         },
       ],
       isError: true,
