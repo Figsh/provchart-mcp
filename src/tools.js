@@ -167,7 +167,7 @@ Site: https://chart.devtem.org`,
 document.getElementById('chart').innerHTML = html;
 const s = document.createElement('style'); s.textContent = css; document.head.appendChild(s);`,
     svg: `After provchart_generate_svg: write svg to disk; in README use ![alt](./charts/x.svg). Avoid huge data URIs on GitHub when possible.`,
-    runtime: `Optional: npm i provchart-runtime or CDN. Set window.ProvChartRuntimeConfig then load script. Enhances [data-provchart] HTML only; skips pure SVG when excludeSvg:true.`,
+    runtime: `Optional: npm i provchart-runtime or CDN (<script src="https://cdn.jsdelivr.net/npm/provchart-runtime@1.2.0/dist/provchart-runtime.min.js" defer></script>) . Set window.ProvChartRuntimeConfig then load script. Enhances [data-provchart] HTML only; skips pure SVG when excludeSvg:true.`,
     errors: `INVALID_API_KEY | MONTHLY_LIMIT_REACHED | SUBSCRIPTION_REQUIRED. Free tier has limited gens/month. HTML and SVG share quota.`,
   };
   return map[topic] || map.overview;
