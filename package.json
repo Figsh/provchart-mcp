@@ -7,6 +7,9 @@
     "provchart-mcp": "./src/index.js"
   },
   "main": "./src/index.js",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "start": "node src/index.js"
   },
@@ -19,9 +22,24 @@
   "license": "MIT",
   "keywords": [
     "mcp",
+    "mcp-server",
     "provchart",
     "charts",
-    "css",
-    "agent"
-  ]
+    "chart-generator",
+    "css-charts",
+    "svg",
+    "readme",
+    "agent",
+    "ai-agent",
+    "llm-tools"
+  ],
+  "author": "Figsh",
+  "homepage": "https://chart.devtem.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Figsh/provchart-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Figsh/provchart-mcp/issues"
+  }
 }
