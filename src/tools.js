@@ -2,7 +2,7 @@ import { provchartFetch } from "./client.js";
 
 const CHART_TYPES = [
   "line", "area", "bar", "stackedbar", "hbar",
-  "scatter", "combo", "gauge",
+  "scatter", "combo", "gauge", "radar", 
 ];
 
 /** Shared JSON-schema-ish properties for chart config */
