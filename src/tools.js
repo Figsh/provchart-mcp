@@ -2,7 +2,7 @@ import { provchartFetch } from "./client.js";
 
 const CHART_TYPES = [
   "line", "area", "bar", "stackedbar", "hbar",
-  "scatter", "combo", "gauge", "radar", 
+  "scatter", "combo", "gauge", "radar",
 ];
 
 /** Shared JSON-schema-ish properties for chart config */
@@ -55,6 +55,11 @@ const chartProperties = {
   stacked: {
     type: "boolean",
     description: "For type: bar — stack series instead of grouping them side by side.",
+  },
+  gridShape: {
+    type: "string",
+    description:
+      "type: radar only. Grid rings as circles (default) or polygons: circle | polygon. Radar needs at least 3 points per series, and axisX names each axis.",
   },
   legend: {
     type: "boolean",
@@ -199,8 +204,9 @@ document.getElementById('chart').innerHTML = html;
 const s = document.createElement('style'); s.textContent = css; document.head.appendChild(s);`,
     svg: `After provchart_generate_svg: write svg to disk; in README use ![alt](./charts/x.svg). Avoid huge data URIs on GitHub when possible.`,
     runtime: `Optional: npm i provchart-runtime or CDN (<script src="https://cdn.jsdelivr.net/npm/provchart-runtime@1.2.0/dist/provchart-runtime.min.js" defer></script>) . Set window.ProvChartRuntimeConfig then load script. Enhances [data-provchart] HTML only; skips pure SVG when excludeSvg:true.`,
-    ranges: `Values are NOT locked to 0-100. Omit min/max and the chart auto-scales from your data (min defaults to 0 unless values go negative; max is the highest value, or the highest stacked total when stacked:true). Pass min/max to pin the axis yourself. axisY:false hides the numeric Y-axis labels.`,
+    ranges: `Radar (type "radar", alias "spider"): one point per axis, at least 3 axes, axisX = axis names, gridShape circle|polygon. Values are NOT locked to 0-100. Omit min/max and the chart auto-scales from your data (min defaults to 0 unless values go negative; max is the highest value, or the highest stacked total when stacked:true). Pass min/max to pin the axis yourself. axisY:false hides the numeric Y-axis labels.`,
     errors: `INVALID_API_KEY | MONTHLY_LIMIT_REACHED | SUBSCRIPTION_REQUIRED. Free tier has limited gens/month. HTML and SVG share quota.`,
   };
   return map[topic] || map.overview;
 }
+
