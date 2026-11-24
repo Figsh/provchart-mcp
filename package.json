@@ -1,6 +1,6 @@
 {
   "name": "provchart-mcp",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "MCP server for ProvChart — generate pure CSS charts (HTML/CSS or SVG) from agents",
   "type": "module",
   "bin": {
